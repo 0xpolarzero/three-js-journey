@@ -5,6 +5,8 @@
 
 // Focus back on the scene: SHIFT + C
 
+// Search: F3
+
 // * Creating objects
 // Open the creation menu: SHIFT + A
 
@@ -21,3 +23,9 @@
 //* Modes
 // Mode wheel menu: CTRL + TAB
 // Switch object/edit mode: TAB
+
+// * Shading
+// Shading wheel menu: Z
+
+// * Rendering
+// Render the scene from the camera: F12
