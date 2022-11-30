@@ -37,3 +37,9 @@ void foo() {
 
 // * Uniforms
 // https://threejs-journey.com/lessons/shaders#uniforms
+
+// * Constants
+#define PI 3.14159265359 // cheaper than using a variable
+
+// * Shader patterns
+// https://threejs-journey.com/lessons/shader-patterns
