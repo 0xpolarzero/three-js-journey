@@ -2,6 +2,7 @@
 // see https://codesandbox.io/s/layer-materials-nvup4?file=/src/App.js
 
 // ! React
+// * Add strict mode if not already
 // * useMemo
 // Pass a function and an array of dependencies. useMemo will only recompute
 // the memoized value when one of the dependencies has changed.
