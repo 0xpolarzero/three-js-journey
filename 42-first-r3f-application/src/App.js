@@ -5,6 +5,9 @@ import { Canvas } from '@react-three/fiber';
 export const App = () => {
   return (
     <Canvas
+      //   frameloop='demand' // ! Only render when there is a change
+      // Maximum pixel ratio of 2
+      //   dpr={[1, 2]} // already default
       //   orthographic
       camera={{
         fov: 45,

@@ -32,3 +32,15 @@ const Clicker = ({ color }) => {
 useEffect(() => {
   buttonRef.current.focus();
 }, []);
+
+// * R3F
+
+// * Optimizations
+<Canvas frameloop='demand' />; // ! Only render when there is a change
+
+// * 3D text
+// Use SDF fonts
+// https://github.com/protectwise/troika/tree/main/packages/troika-three-text
+// -> a script generates the texture with the distance info for each character
+// A font can be provided, woff is lighter
+// https://gwfh.mranftl.com/fonts
