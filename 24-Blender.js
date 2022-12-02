@@ -29,3 +29,5 @@
 
 // * Rendering
 // Render the scene from the camera: F12
+
+// ! Select whole element from click: CTRL + L
