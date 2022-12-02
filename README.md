@@ -1,14 +1,5 @@
 # Three.js Journey
 
-### Setup
+Monorepo for everything related to my Three.js Journey.
 
-- [lil-gui](https://lil-gui.georgealways.com/) for debugging (Dat.GUI but updated)
-
-### To think about
-
-- Handle pixel ration: useless to go over 2
-  `renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))`
-
-### Animation libraries
-
-- GSAP
+From Bruno Simon's [threejs-journey](https://threejs-journey.com/) course.
