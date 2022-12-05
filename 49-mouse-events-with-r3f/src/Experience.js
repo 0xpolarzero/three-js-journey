@@ -1,5 +1,5 @@
 import { useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { meshBounds, OrbitControls } from '@react-three/drei';
 import { useRef } from 'react';
 
 // !
@@ -17,7 +17,7 @@ export default function Experience() {
   const onHover = (e, value) => {
     console.log(e);
     e.stopPropagation();
-    sphere.current.scale.set(value, value, value);
+    cube.current.scale.set(value, value, value);
   };
   const onClick = (e) => {
     e.stopPropagation();
@@ -34,6 +34,18 @@ export default function Experience() {
       <mesh
         ref={sphere}
         position-x={-2}
+        onPointerEnter={(e) => e.stopPropagation()}
+      >
+        <sphereGeometry />
+        <meshStandardMaterial color='orange' />
+      </mesh>
+
+      <mesh
+        ref={cube}
+        position-x={2}
+        scale={1.5}
+        // To use a bounding sphere for better optimization
+        raycast={meshBounds}
         onClick={onClick}
         onPointerEnter={(e) => {
           document.body.style.cursor = 'pointer';
@@ -44,16 +56,6 @@ export default function Experience() {
           onHover(e, 1);
         }}
         // onContextMenu is a right click / long press on mobile
-      >
-        <sphereGeometry />
-        <meshStandardMaterial color='orange' />
-      </mesh>
-
-      <mesh
-        ref={cube}
-        position-x={2}
-        scale={1.5}
-        onPointerEnter={(e) => e.stopPropagation()}
       >
         <boxGeometry />
         <meshStandardMaterial color='mediumpurple' />

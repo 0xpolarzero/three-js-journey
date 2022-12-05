@@ -45,3 +45,8 @@ useEffect(() => {
 // -> a script generates the texture with the distance info for each character
 // A font can be provided, woff is lighter
 // https://gwfh.mranftl.com/fonts
+
+// * Pointer events
+// Good to use meshBounds to optimize: will test from a bounding sphere instead
+// of a precise geometry test
+// or useBVH for more complex geometries
