@@ -1,28 +1,26 @@
-import { OrbitControls } from '@react-three/drei'
-import Lights from './Lights.js'
+import { Level } from './components/Level.js';
+import { Player } from './components/Player.js';
+import { Lights } from './components/Lights.js';
+import useGame from './stores/useGame';
+import { Debug, Physics } from '@react-three/rapier';
+import { Effects } from './systems/Effects.js';
 
-export default function Experience()
-{
-    return <>
+export default function Experience() {
+  const blocksCount = useGame((state) => state.blocksCount);
+  const blocksSeed = useGame((state) => state.blocksSeed);
 
-        <OrbitControls makeDefault />
+  return (
+    <>
+      {/* <OrbitControls makeDefault /> */}
+      <color attach='background' args={['#131313']} />
 
+      <Physics>
+        {/* <Debug /> */}
         <Lights />
-
-        <mesh castShadow position-x={ - 2 }>
-            <sphereGeometry />
-            <meshStandardMaterial color="orange" />
-        </mesh>
-
-        <mesh castShadow position-x={ 2 } scale={ 1.5 }>
-            <boxGeometry />
-            <meshStandardMaterial color="mediumpurple" />
-        </mesh>
-
-        <mesh receiveShadow position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
-            <planeGeometry />
-            <meshStandardMaterial color="greenyellow" />
-        </mesh>
-
+        <Level count={blocksCount} seed={blocksSeed} />
+        <Player />
+        <Effects />
+      </Physics>
     </>
+  );
 }
